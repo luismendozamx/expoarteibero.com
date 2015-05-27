@@ -1,0 +1,24 @@
+<div class="col-sm-10 col-sm-offset-1">
+  <%= simple_form_for(@art_piece) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :discipline, label: 'Disciplina' %>
+      <%= f.input :title, label: 'Título de la obra' %>
+      <%= f.input :date_of, label: 'Fecha', as: :date, start_year: Date.today.year,
+                                end_year: Date.today.year - 30, discard_day: true,
+                                discard_month: true, order: [:year] %>
+      <%= f.input :dimensions, label: 'Dimensiones', hint: 'Alto x Ancho x Profundidad' %>
+      <%= f.input :technique, label: 'Técnica' %>
+      <%= f.input :description, label: 'Memoria Técnico-Descriptiva', collection: ['Bidimensional', 'Tridimensional', 'Interactiva', 'Sistema Digital', 'Recorrible', 'Video', 'Escénica', 'Otra'] %>
+      <%= f.input :quantity, label: 'Cantidad de piezas de la obra', collection: 1..10 %>
+      <%= f.input :observations, label: 'Observaciones importantes', hint: 'De exhibición, montaje, conservación, ...' %>
+      <%= f.input :exhibit_text, label: 'Texto de sala', hint: 'Escrito tal como será presentado. Exclusivo para textos que se exhibirán en sala.' %>
+      <%= f.input :artist_statement, label: 'Memoria Conceptual (máximo 250 palabras)', hint: 'Escrito del artista que justifíque o explíque por qué su pieza propone una lectura sobre la relación cuerpo-arte.' %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

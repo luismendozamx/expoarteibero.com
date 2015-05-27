@@ -1,0 +1,20 @@
+<div class="col-sm-10 col-sm-offset-1">
+  <%= simple_form_for(@user_subscription) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :birth_date, label: 'Fecha de Nacimiento', as: :date, start_year: Date.today.year - 16,
+                                end_year: Date.today.year - 40,
+                                order: [:day, :month, :year] %>
+      <%= f.input :nationality, label: 'Nacionalidad' %>
+      <%= f.input :address, label: 'Dirección' %>
+      <%= f.input :phone, label: 'Teléfono' %>
+      <%= f.input :institution, label: 'Institución de Procedencia' %>
+      <%= f.input :about, label: 'Trayectoria Artística' %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Guardar', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

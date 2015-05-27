@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Discipline:</strong>
+  <%= @art_piece.discipline %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @art_piece.title %>
+</p>
+
+<p>
+  <strong>Date of:</strong>
+  <%= @art_piece.date_of %>
+</p>
+
+<p>
+  <strong>Dimensions:</strong>
+  <%= @art_piece.dimensions %>
+</p>
+
+<p>
+  <strong>Technique:</strong>
+  <%= @art_piece.technique %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @art_piece.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @art_piece.quantity %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @art_piece.observations %>
+</p>
+
+<p>
+  <strong>Exhibit text:</strong>
+  <%= @art_piece.exhibit_text %>
+</p>
+
+<p>
+  <strong>Artist statement:</strong>
+  <%= @art_piece.artist_statement %>
+</p>
+
+<%= link_to 'Edit', edit_art_piece_path(@art_piece) %> |
+<%= link_to 'Back', art_pieces_path %>

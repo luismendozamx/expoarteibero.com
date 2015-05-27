@@ -1,0 +1,23 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <h2 class="center">Inscríbete</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true %>
+      <%= f.input :first_name, label: 'Nombre', required: true %>
+      <%= f.input :last_name, label: 'Apellido', required: true %>
+      <%= f.input :password, label: 'Contraseña', required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+      <%= f.input :read_agreement, label: 'Confirmo haber leído el reglamento y acepto', required: true %>
+      <a href="#">Ver Reglamento</a>
+    </div>
+    
+    <br>
+    <div class="form-actions">
+      <%= f.button :submit, "Enviar", class: 'btn btn-success btn-fill' %>
+    </div>
+    <br>
+    <p class="center">¿Ya estás inscrito? <%= link_to "Ingresa a tu cuenta", login_path %></p>
+  <% end %>
+</div>

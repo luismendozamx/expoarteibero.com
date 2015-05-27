@@ -1,0 +1,97 @@
+<div class="row">
+
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Datos de inscripción</h3>
+      </div>
+      <div class="panel-body">
+        <p><strong>Nombre:</strong> <%= current_user.first_name %></p>
+        <p><strong>Email: </strong> <%= current_user.email %></p>
+        <%= link_to 'Editar Información', edit_user_registration_path, class: 'btn btn-info' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Instrucciones</h3>
+      </div>
+      <div class="panel-body">
+        <ol>
+          <li>Llena todos los campos.</li>
+          <li>Puedes agregar una o dos obras.</li>
+          <li>Al terminar de llenar una pestaña, guarda los cambios.</li>
+          <li>Puedes regresar a editar tu inscripción usando tu email y contraseña.</li>
+          <li>Una vez completa envía tu solicitud.</li>
+          <li>Una vez enviada no podras modificarla.</li>
+          <li>La convocatoria se cierra el 28 de agosto.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+<br>
+
+<div class="row">
+
+  <div class="col-sm-12">
+    <h3 class="center">Forma de Inscripción</h3>
+  </div>
+
+  <div class="col-sm-10 col-sm-offset-1">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active"><a href="#datos" role="tab" data-toggle="tab">Datos Personales</a></li>
+      <li><a href="#obra-1" role="tab" data-toggle="tab">Obra 1</a></li>
+      <li><a href="#obra-2" role="tab" data-toggle="tab">Obra 2</a></li>
+    </ul>
+    <br>
+  </div>
+</div>
+
+<div class="row tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="datos">
+
+    <div class="col-sm-12">
+
+      <% if current_user.user_subscription == nil %>
+        <% @user_subscription = UserSubscription.new %>
+      <% else %>
+        <% @user_subscription = UserSubscription.find(current_user.user_subscription.id) %>
+      <% end %>
+
+      <%= render 'user_subscriptions/form' %>
+    </div>
+
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="obra-1">
+    <div class="col-sm-12">
+      <% if current_user.art_pieces.count == 0 %>
+        <% @art_piece = ArtPiece.new %>
+      <% else %>
+        <% @art_piece = ArtPiece.find(current_user.art_pieces.first.id) %>
+      <% end %>
+
+      <%= render 'art_pieces/form' %>
+    </div>    
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="obra-2">
+    <div class="col-sm-12">
+      <% if current_user.art_pieces.count == 0 ||  current_user.art_pieces.count == 1 %>
+        <% @art_piece = ArtPiece.new %>
+      <% else %>
+        <% @art_piece = ArtPiece.find(current_user.art_pieces.last.id) %>
+      <% end %>
+
+      <%= render 'art_pieces/form' %>
+    </div>  
+  </div>
+  
+</div>

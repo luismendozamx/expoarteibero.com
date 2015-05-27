@@ -45,5 +45,4 @@ gem 'faker', group: :development
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'devise'
-gem 'bootstrap-datepicker-rails'
 

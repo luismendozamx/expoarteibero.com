@@ -5,16 +5,16 @@
     <div class="form-inputs">
       <%= f.input :birth_date, label: 'Fecha de Nacimiento', as: :date, start_year: Date.today.year - 16,
                                 end_year: Date.today.year - 40,
-                                order: [:day, :month, :year] %>
-      <%= f.input :nationality, label: 'Nacionalidad' %>
-      <%= f.input :address, label: 'Dirección' %>
-      <%= f.input :phone, label: 'Teléfono' %>
-      <%= f.input :institution, label: 'Institución de Procedencia' %>
-      <%= f.input :about, label: 'Trayectoria Artística' %>
+                                order: [:day, :month, :year], disabled: current_user.status %>
+      <%= f.input :nationality, label: 'Nacionalidad', disabled: current_user.status %>
+      <%= f.input :address, label: 'Dirección', disabled: current_user.status %>
+      <%= f.input :phone, label: 'Teléfono', disabled: current_user.status %>
+      <%= f.input :institution, label: 'Institución de Procedencia', disabled: current_user.status %>
+      <%= f.input :about, label: 'Trayectoria Artística', :input_html => { :rows => 10, :style => 'width: 100%'}, disabled: current_user.status %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, 'Guardar', class: 'btn btn-primary' %>
+      <%= f.button :submit, 'Guardar datos', class: 'btn btn-primary', disabled: current_user.status %>
     </div>
   <% end %>
 </div>

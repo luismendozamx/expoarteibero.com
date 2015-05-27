@@ -4,8 +4,7 @@ class ArtPiecesController < ApplicationController
   respond_to :html
 
   def index
-    @art_pieces = ArtPiece.all
-    respond_with(@art_pieces)
+    redirect_to registro_path
   end
 
   def show
@@ -24,16 +23,17 @@ class ArtPiecesController < ApplicationController
     @art_piece = ArtPiece.new(art_piece_params)
     @art_piece.user_id = current_user.id
     @art_piece.save
+    flash[:notice] = "Se guardó la información correctamente"
     redirect_to registro_path
   end
 
   def update
     @art_piece.update(art_piece_params)
+    flash[:notice] = "Se guardó la información correctamente"
     redirect_to registro_path
   end
 
   def destroy
-    @art_piece.destroy
     redirect_to registro_path
   end
 

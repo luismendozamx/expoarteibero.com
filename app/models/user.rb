@@ -14,4 +14,12 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
 
+  def status
+    if self.application_status == "sent"
+      true
+    else
+      false
+    end
+  end
+
 end

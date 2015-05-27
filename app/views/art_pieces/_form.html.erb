@@ -3,22 +3,22 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :discipline, label: 'Disciplina' %>
-      <%= f.input :title, label: 'Título de la obra' %>
+      <%= f.input :discipline, label: 'Disciplina', disabled: current_user.status %>
+      <%= f.input :title, label: 'Título de la obra', disabled: current_user.status %>
       <%= f.input :date_of, label: 'Fecha', as: :date, start_year: Date.today.year,
                                 end_year: Date.today.year - 30, discard_day: true,
-                                discard_month: true, order: [:year] %>
-      <%= f.input :dimensions, label: 'Dimensiones', hint: 'Alto x Ancho x Profundidad' %>
-      <%= f.input :technique, label: 'Técnica' %>
-      <%= f.input :description, label: 'Memoria Técnico-Descriptiva', collection: ['Bidimensional', 'Tridimensional', 'Interactiva', 'Sistema Digital', 'Recorrible', 'Video', 'Escénica', 'Otra'] %>
-      <%= f.input :quantity, label: 'Cantidad de piezas de la obra', collection: 1..10 %>
-      <%= f.input :observations, label: 'Observaciones importantes', hint: 'De exhibición, montaje, conservación, ...' %>
-      <%= f.input :exhibit_text, label: 'Texto de sala', hint: 'Escrito tal como será presentado. Exclusivo para textos que se exhibirán en sala.' %>
-      <%= f.input :artist_statement, label: 'Memoria Conceptual (máximo 250 palabras)', hint: 'Escrito del artista que justifíque o explíque por qué su pieza propone una lectura sobre la relación cuerpo-arte.' %>
+                                discard_month: true, order: [:year], disabled: current_user.status %>
+      <%= f.input :dimensions, label: 'Dimensiones', hint: 'Alto x Ancho x Profundidad', disabled: current_user.status %>
+      <%= f.input :technique, label: 'Técnica', disabled: current_user.status %>
+      <%= f.input :description, label: 'Memoria Técnico-Descriptiva', collection: ['Bidimensional', 'Tridimensional', 'Interactiva', 'Sistema Digital', 'Recorrible', 'Video', 'Escénica', 'Otra'], disabled: current_user.status %>
+      <%= f.input :quantity, label: 'Cantidad de piezas de la obra', collection: 1..10, disabled: current_user.status %>
+      <%= f.input :observations, label: 'Observaciones importantes', hint: 'De exhibición, montaje, conservación, ...', :input_html => { :rows => 7, :style => 'width: 100%'}, disabled: current_user.status %>
+      <%= f.input :exhibit_text, label: 'Texto de sala', hint: 'Escrito tal como será presentado. Exclusivo para textos que se exhibirán en sala.', :input_html => { :rows => 7, :style => 'width: 100%'}, disabled: current_user.status %>
+      <%= f.input :artist_statement, label: 'Memoria Conceptual (máximo 250 palabras)', hint: 'Escrito del artista que justifíque o explíque por qué su pieza propone una lectura sobre la relación cuerpo-arte.', :input_html => { :rows => 10, :style => 'width: 100%'}, disabled: current_user.status %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-primary'%>
+      <%= f.button :submit, "Guardar Obra",class: 'btn btn-primary', disabled: current_user.status %>
     </div>
   <% end %>
 </div>

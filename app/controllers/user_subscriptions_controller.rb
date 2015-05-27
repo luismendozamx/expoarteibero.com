@@ -5,8 +5,7 @@ class UserSubscriptionsController < ApplicationController
   respond_to :html
 
   def index
-    @user_subscriptions = UserSubscription.all
-    respond_with(@user_subscriptions)
+    redirect_to registro_path
   end
 
   def show

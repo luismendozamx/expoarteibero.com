@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -26,10 +26,14 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to "Mi Inscripción", registro_path %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
+          <form class="navbar-form navbar-left">
+            <%= link_to "Mi Inscripción", registro_path, class: 'btn btn-success' %>
+            <%= link_to "Cerrar Sesión", logout_path, class: 'btn btn-danger' %>
+          </form>
         <% else %>
-          <li><%= link_to "Inscríbete", register_path %></li>
+          <form class="navbar-form navbar-left">
+            <%= link_to "Inscríbete", register_path, class: 'btn btn-primary' %>
+          </form>
         <% end %>
       </ul>
     </div>

@@ -1,5 +1,6 @@
 class ArtPiecesController < ApplicationController
   before_action :set_art_piece, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   respond_to :html
 
@@ -43,6 +44,6 @@ class ArtPiecesController < ApplicationController
     end
 
     def art_piece_params
-      params.require(:art_piece).permit(:discipline, :title, :date_of, :dimensions, :technique, :description, :quantity, :observations, :exhibit_text, :artist_statement)
+      params.require(:art_piece).permit(:discipline, :title, :date_of, :dimensions, :technique, :description, :quantity, :observations, :exhibit_text, :artist_statement, :attachment_file, :remove_attachment_file)
     end
 end

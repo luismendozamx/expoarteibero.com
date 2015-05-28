@@ -1,6 +1,6 @@
 class UserSubscriptionsController < ApplicationController
   before_action :set_user_subscription, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
+  before_action :authenticate_user!
 
   respond_to :html
 

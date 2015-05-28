@@ -45,4 +45,9 @@ gem 'faker', group: :development
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'devise'
+gem "mini_magick"
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem "refile-s3"
+gem "aws-sdk"
 

@@ -45,7 +45,7 @@ gem 'simple_form'
 gem 'faker', group: :development
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'devise'
+gem 'devise', '3.5.1'
 gem "mini_magick"
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"

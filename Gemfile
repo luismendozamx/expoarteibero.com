@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -50,4 +51,4 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem "refile-s3"
 gem "aws-sdk"
-
+gem 'rails_12factor'

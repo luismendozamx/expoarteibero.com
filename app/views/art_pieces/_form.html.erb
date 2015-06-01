@@ -15,7 +15,7 @@
       <% if @art_piece.attachment_file_id? %>
         <br>
         <div class="form-group">
-          <%= attachment_image_tag(@art_piece, :attachment_file, :fill, 150, 150, class: "img-responsive") %>
+          <%= attachment_image_tag(@art_piece, :attachment_file, :fill, 250, 250, class: "img-responsive") %>
           <%= f.check_box :remove_attachment_file, disabled: current_user.status %>
           <%= f.label "Eliminar Archivo" %>
         </div>

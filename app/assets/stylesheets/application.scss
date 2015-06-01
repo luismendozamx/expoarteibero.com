@@ -19,14 +19,37 @@
 @import "_variables";
 
 body{
-  background-color: #eee;
+  background-color: lighten(#cdb8db, 15%);
 }
+
+#main-nav{
+  background-color: #cdb8db;
+  border-color: darken(#cdb8db, 5%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #fff;
+
+  a{
+    color: #fff;
+  }
+}
+
+.btn-primary{
+  background-color: darken(#cdb8db, 20%);
+  border-color: darken(#cdb8db, 30%);
+
+  &:hover{
+    background-color: darken(#cdb8db, 20%);
+    border-color: darken(#cdb8db, 30%);
+  }
+}
+
 
 #main-container{
   padding-top: 40px;
   padding-bottom: 40px;
-  margin-top: 70px;
-  margin-bottom: 20px;
+  margin-top: 110px;
+  margin-bottom: 40px;
   background-color: #fff;
 }
 
@@ -40,6 +63,14 @@ body{
   margin-right: auto;
 }
 
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
 .has-error .checkbox{
   color: #ff4136;
 }
@@ -49,8 +80,36 @@ body{
 }
 
 .alert{
-  margin-top: 50px;
+  margin-top: 70px;
   p{
     margin: 0;
+  }
+}
+
+#home-container{
+  margin-top: 70px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+footer{
+  background-color: #cdb8db;
+  color: #fff;
+
+  .container{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  p{
+    margin-bottom: 0;
+  }
+
+  a{
+    color: #fff;
+
+    &:hover{
+      color: #eee;
+    }
   }
 }

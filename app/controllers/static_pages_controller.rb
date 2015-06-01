@@ -2,6 +2,8 @@ class StaticPagesController < ApplicationController
   def home
     if current_user
       redirect_to new_user_subscription_path
+    else
+      render :layout => 'home'
     end
   end
 

@@ -10,7 +10,7 @@
       <%= f.input :last_name, label: 'Apellido', required: true %>
       <%= f.input :password, label: 'Contraseña', required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
       <%= f.input :read_agreement, label: 'Confirmo haber leído el reglamento y acepto', required: true %>
-      <a href="#">Ver Reglamento</a>
+      <%= link_to "Ver Reglamento", asset_path("REGLAMENTO_EXPOANTROPOMETRIAS.pdf"), target: "_blank" %>
     </div>
     
     <br>

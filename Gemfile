@@ -53,3 +53,4 @@ gem "refile-s3"
 gem "aws-sdk"
 gem 'rails_12factor'
 gem 'unicorn'
+gem 'figaro'

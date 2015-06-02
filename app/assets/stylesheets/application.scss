@@ -90,15 +90,60 @@ body{
   margin-top: 70px;
   padding-left: 0px;
   padding-right: 0px;
+
+}
+
+#hero-home{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: image-url("background-blur.jpg");
+  background-size: cover;
+  background-position: center center;
+
+  img{
+
+  }
+}
+
+#donde{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: darken(#cdb8db, 20%);
+
+  h1, h3, a{
+    color: #fff;
+  }
+}
+
+#quienes{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: darken(#cdb8db, 40%);
+
+  p{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  h1, h2, h3, p{
+    color: darken(#cdb8db, 40%);
+  }
+}
+
+#logos{
+  background-color: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 footer{
   background-color: #cdb8db;
+  background-color: darken(#cdb8db, 20%);
   color: #fff;
 
   .container{
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   p{
@@ -107,6 +152,7 @@ footer{
 
   a{
     color: #fff;
+    font-size: 16px;
 
     &:hover{
       color: #eee;

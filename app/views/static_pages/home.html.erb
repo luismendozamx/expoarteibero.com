@@ -1,3 +1,50 @@
 <section id="hero-home">
-  <%= image_tag "cartel.jpg", class: "img-responsive" %>
+  <%= image_tag "intro.png", class: "img-responsive center" %>
+</section>
+
+<section id="donde">
+  <div class="container">
+    <div class="col-sm-6">
+      <h1 class="center">Fechas de inscripción</h1>
+      <h3 class="center">Hasta el 28 de agosto 2015</h3>
+      <h3 class="center"><%= link_to "Ver Reglamento", asset_path("REGLAMENTO_EXPOANTROPOMETRIAS.pdf"), target: "_blank", class: "btn btn-info" %></h3>
+    </div>
+    <div class="col-sm-6">
+      <h1 class="center">Fechas de exposición</h1>
+      <h3 class="center">Del 28 de septiembre al 12 de octubre</h3>
+      <h3 class="center">Galería Universitaria - Universidad Iberoamericana, Ciudad de México</h3>
+    </div>
+  </div>
+</section>
+
+<section id="quienes">
+  <div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1 class="center">¿En qué consiste?</h1>
+      <p>La exposición colectiva <i>Antropometrías: diálogos entre cuerpo y arte</i> busca generar un espacio que proponga, experimente, cree y genere reflexiones entorno a la relación que existe entre las expresiones del CUERPO y el ARTE.</p>
+      <p>En el marco de la tradicional “Semana de Arte”, la Sociedad de Alumnos de Historia del Arte de la Universidad Iberoamericana <strong>CONVOCA ARTISTAS</strong>, con el propósito de enriquecer y complementar el ejercicio académica con la experiencia artística.</p>
+      <p>Pintura, escultura, fotografía, danza, video… son lenguajes que nos ofrecen un diálogo con el cuerpo, ya sea como inspiración, soporte, medio, temática…</p>
+      <p class="center"><i>¿Tú obra que propone?</i></p>
+    </div>
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1 class="center">¿Quiénes somos?</h1>
+      <p>Somos un grupo de futuros historiadores del arte con la intención de crear espacios de crecimiento intelectual y creativo, de intercambio intelectual, cultural y artístico. Somos “Meninas”, Sociedad de Alumnos de Historia del Arte de la Universidad Iberoamericana. </p>
+    </div>
+  </div>
+</section>
+
+<section id="logos">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= image_tag "ibero.png", class: "img-responsive center" %>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag "arte.png", class: "img-responsive center" %>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag "meninas.png", class: "img-responsive center" %>
+      </div>
+    </div>
+  </div>
 </section>

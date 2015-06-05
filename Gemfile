@@ -54,3 +54,4 @@ gem "aws-sdk"
 gem 'rails_12factor'
 gem 'unicorn'
 gem 'figaro'
+gem 'skylight'

@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150528023336) do
     t.string   "encrypted_password",     default: "", null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "username"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -70,5 +71,6 @@ ActiveRecord::Schema.define(version: 20150528023336) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

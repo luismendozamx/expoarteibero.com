@@ -7,7 +7,7 @@
       <p>Dirección: <%= @user.user_subscription.address %></p>
       <p>Teléfono: <%= @user.user_subscription.phone %></p>
       <p>Institución de Procedencia: <%= @user.user_subscription.institution %></p>
-      <p>Trayectoria Artística: <%= @user.user_subscription.about %></p>
+      <p>Trayectoria Artística: <%= simple_format(@user.user_subscription.about) %></p>
     <% else %>
       <p>Fecha de Nacimiento: N/A </p>
       <p>Nacionalidad: N/A </p>
@@ -28,13 +28,13 @@
       <br>
       <%= attachment_image_tag(piece, :attachment_file, :fit, 1000, 1000, class: "center img-responsive") %>
       <br>
-      <p>Disciplina: <%= piece.discipline %></p>
-      <p>Fecha: <%= piece.date_of %></p>
-      <p>Dimensiones: <%= piece.dimensions %></p>
-      <p>Cantidad de piezas de la obra: <%= piece.dimensions %></p>
-      <p>Observaciones: <%= piece.observations %></p>
-      <p>Texto de sala: <%= piece.exhibit_text %></p>
-      <p>Memoria Conceptual: <%= piece.artist_statement %></p>
+      <p><strong>Disciplina:</strong></br> <%= piece.discipline %></p>
+      <p><strong>Fecha:</strong></br> <%= piece.date_of %></p>
+      <p><strong>Dimensiones:</strong></br> <%= piece.dimensions %></p>
+      <p><strong>Cantidad de piezas de la obra:</strong></br> <%= piece.quantity %></p>
+      <p><strong>Observaciones:</strong></br> <%= simple_format(piece.observations %></p>
+      <p><strong>Texto de sala:</strong></br> <%= simple_format(piece.exhibit_text) %></p>
+      <p><strong>Memoria Conceptual:</strong></br> <%= simple_format(piece.artist_statement) %></p>
     <% end %>
   </div>
 </div>

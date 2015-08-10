@@ -22,4 +22,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def is_admin?
+    if self.email == "luis@mendoza.io" || self.email == "giannella.ysasit@gmail.com"
+      true
+    else
+      false
+    end
+  end
 end

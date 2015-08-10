@@ -79,7 +79,7 @@
       <% end %>
 
       <%= render 'art_pieces/form' %>
-    </div>    
+    </div>
   </div>
 
   <div role="tabpanel" class="tab-pane" id="obra-2">
@@ -91,9 +91,9 @@
       <% end %>
 
       <%= render 'art_pieces/form' %>
-    </div>  
+    </div>
   </div>
-  
+
 </div>
 
 <br>
@@ -126,7 +126,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        
+
         <% if current_user.status %>
           <h4 class="modal-title center">Envío exitoso</h4>
         <% else %>
@@ -139,7 +139,7 @@
         <% else %>
           <h4 class="center">Recuerda que una vez enviada no podrás hacer cambios.</h4>
         <% end %>
-        
+
         <br>
         <% @user = current_user %>
         <%= simple_form_for(@user, url: save_application_path, html: { method: :put }) do |f| %>

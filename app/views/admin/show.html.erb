@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h3><%= @user.full_name %></h3>
+    <% if @user.user_subscription %>
+      <p>Fecha de Nacimiento: <%= @user.user_subscription.birth_date %></p>
+      <p>Nacionalidad: <%= @user.user_subscription.nationality %></p>
+      <p>Dirección: <%= @user.user_subscription.address %></p>
+      <p>Teléfono: <%= @user.user_subscription.phone %></p>
+      <p>Institución de Procedencia: <%= @user.user_subscription.institution %></p>
+      <p>Trayectoria Artística: <%= @user.user_subscription.about %></p>
+    <% else %>
+      <p>Fecha de Nacimiento: N/A </p>
+      <p>Nacionalidad: N/A </p>
+      <p>Dirección: N/A </p>
+      <p>Teléfono: N/A </p>
+      <p>Institución de Procedencia: N/A </p>
+      <p>Trayectoria Artística: N/A </p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <h1 class="center">Obras</h1>
+  <div class="col-sm-12">
+    <% @art_pieces.each do |piece| %>
+      <hr>
+      <h3><%= piece.title %></h3>
+      <br>
+      <%= attachment_image_tag(piece, :attachment_file, :fill, class: "center img-responsive") %>
+      <br>
+      <p><%= piece.discipline %></p>
+      <p><%= piece.date_of %></p>
+      <p><%= piece.dimensions %></p>
+      <p><%= piece.observations %></p>
+      <p><%= piece.exhibit_text %></p>
+      <p><%= piece.artist_statement %></p>
+      <p><%= piece.observations %></p>
+    <% end %>
+  </div>
+</div>

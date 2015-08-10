@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3># de usuarios registrados</h3>
+      </div>
+      <div class="panel-body">
+        <h1 class="center"><%= @user_count %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3># de solicitudes enviadas</h3>
+      </div>
+      <div class="panel-body">
+        <h1 class="center"><%= @registered_users_count %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+        <th>Nombre</th>
+        <th>email</th>
+        <th># de Obras</th>
+      </thead>
+      <tbody>
+        <% @registered_users.each do |user| %>
+          <td><%= link_to user.full_name, admin_user_path(user.id) %></td>
+          <td><%= user.email %></td>
+          <td><%= user.art_pieces.count %></td>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

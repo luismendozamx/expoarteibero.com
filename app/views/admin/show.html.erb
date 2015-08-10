@@ -24,17 +24,17 @@
   <div class="col-sm-12">
     <% @art_pieces.each do |piece| %>
       <hr>
-      <h3><%= piece.title %></h3>
+      <h3>Título: <%= piece.title %></h3>
       <br>
-      <%= attachment_image_tag(piece, :attachment_file, :fill, class: "center img-responsive") %>
+      <%= attachment_image_tag(piece, :attachment_file, :fit, 1000, 1000, class: "center img-responsive") %>
       <br>
-      <p><%= piece.discipline %></p>
-      <p><%= piece.date_of %></p>
-      <p><%= piece.dimensions %></p>
-      <p><%= piece.observations %></p>
-      <p><%= piece.exhibit_text %></p>
-      <p><%= piece.artist_statement %></p>
-      <p><%= piece.observations %></p>
+      <p>Disciplina: <%= piece.discipline %></p>
+      <p>Fecha: <%= piece.date_of %></p>
+      <p>Dimensiones: <%= piece.dimensions %></p>
+      <p>Cantidad de piezas de la obra: <%= piece.dimensions %></p>
+      <p>Observaciones: <%= piece.observations %></p>
+      <p>Texto de sala: <%= piece.exhibit_text %></p>
+      <p>Memoria Conceptual: <%= piece.artist_statement %></p>
     <% end %>
   </div>
 </div>

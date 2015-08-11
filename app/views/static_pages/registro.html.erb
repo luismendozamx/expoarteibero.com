@@ -22,7 +22,7 @@
         <ol>
           <li>Llena todos los campos.</li>
           <li>Puedes agregar una o dos obras.</li>
-          <li>Al terminar de llenar una pestaña, guarda los cambios.</li>
+          <li><strong>Al terminar de llenar una pestaña, guarda los cambios.</strong></li>
           <li>Puedes regresar a editar tu inscripción usando tu email y contraseña.</li>
           <li>Una vez completa envía tu solicitud.</li>
           <li>Una vez enviada no podras modificarla.</li>
@@ -134,6 +134,12 @@
         <% end %>
       </div>
       <div class="modal-body">
+        <% if current_user.art_pieces.count < 1 || current_user.user_subscription == nil %>
+          <div class="alert alert-danger" style="margin:0;">
+            <h4>No has guardado ninguna obra, revisa tu solicitud antes de enviarla. Recuerda que debes guardar cada pestaña al terminar de llenarla.</h4>
+          </div>
+        <% end %>
+
         <% if current_user.status %>
           <h4 class="center">Tú inscripción ya fue enviada.</h4>
         <% else %>
@@ -144,7 +150,11 @@
         <% @user = current_user %>
         <%= simple_form_for(@user, url: save_application_path, html: { method: :put }) do |f| %>
           <%= hidden_field_tag :application_status, 'sent' %>
-          <p class="center"><%= f.button :submit, "Enviar Inscripción", class: 'btn btn-success btn-lg', disabled: current_user.status %></p>
+          <% if current_user.art_pieces.count < 1 || current_user.user_subscription == nil %>
+            <p class="center"><%= f.button :submit, "Enviar Inscripción", class: 'btn btn-success btn-lg', disabled: true %></p>
+          <% else %>
+            <p class="center"><%= f.button :submit, "Enviar Inscripción", class: 'btn btn-success btn-lg', disabled: current_user.status %></p>
+          <% end %>
         <% end %>
       </div>
     </div>

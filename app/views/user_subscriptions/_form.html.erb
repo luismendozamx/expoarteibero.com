@@ -5,16 +5,16 @@
     <div class="form-inputs">
       <%= f.input :birth_date, label: 'Fecha de Nacimiento', as: :date, start_year: Date.today.year - 16,
                                 end_year: Date.today.year - 40,
-                                order: [:day, :month, :year], disabled: current_user.status %>
-      <%= f.input :nationality, label: 'Nacionalidad', disabled: current_user.status %>
-      <%= f.input :address, label: 'Dirección', disabled: current_user.status %>
-      <%= f.input :phone, label: 'Teléfono', disabled: current_user.status %>
-      <%= f.input :institution, label: 'Institución de Procedencia', disabled: current_user.status %>
-      <%= f.input :about, label: 'Trayectoria Artística', :input_html => { :rows => 10, :style => 'width: 100%'}, disabled: current_user.status %>
+                                order: [:day, :month, :year], disabled: true %>
+      <%= f.input :nationality, label: 'Nacionalidad', disabled: true %>
+      <%= f.input :address, label: 'Dirección', disabled: true %>
+      <%= f.input :phone, label: 'Teléfono', disabled: true %>
+      <%= f.input :institution, label: 'Institución de Procedencia', disabled: true %>
+      <%= f.input :about, label: 'Trayectoria Artística', :input_html => { :rows => 10, :style => 'width: 100%'}, disabled: true %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, 'Guardar datos', class: 'btn btn-primary', disabled: current_user.status %>
+      <%= f.button :submit, 'Guardar datos', class: 'btn btn-primary', disabled: true %>
     </div>
   <% end %>
 </div>

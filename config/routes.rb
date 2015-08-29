@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :art_pieces
   resources :user_subscriptions
 
-  get 'inscripcion', to: 'static_pages#registro', as: :registro
+  get 'inscripcion', to: 'static_pages#home', as: :registro
   put 'save_application', to: 'users#save_application', as: :save_application
 
   get 'admin', to: 'admin#index', as: :admin

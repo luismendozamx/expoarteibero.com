@@ -3,37 +3,37 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :discipline, label: 'Disciplina', disabled: current_user.status %>
-      <%= f.input :title, label: 'Título de la obra', disabled: current_user.status %>
+      <%= f.input :discipline, label: 'Disciplina', disabled: true %>
+      <%= f.input :title, label: 'Título de la obra', disabled: true %>
       <%= f.input :date_of, label: 'Fecha', as: :date, start_year: Date.today.year,
                                 end_year: Date.today.year - 30, discard_day: true,
-                                discard_month: true, order: [:year], disabled: current_user.status %>
-      <%= f.input :dimensions, label: 'Dimensiones', hint: 'Alto x Ancho x Profundidad', disabled: current_user.status %>
-      <%= f.input :technique, label: 'Técnica', disabled: current_user.status %>
-      <%= f.input :description, label: 'Memoria Técnico-Descriptiva', collection: ['Bidimensional', 'Tridimensional', 'Interactiva', 'Sistema Digital', 'Recorrible', 'Video', 'Escénica', 'Otra'], disabled: current_user.status %>
+                                discard_month: true, order: [:year], disabled: true %>
+      <%= f.input :dimensions, label: 'Dimensiones', hint: 'Alto x Ancho x Profundidad', disabled: true %>
+      <%= f.input :technique, label: 'Técnica', disabled: true %>
+      <%= f.input :description, label: 'Memoria Técnico-Descriptiva', collection: ['Bidimensional', 'Tridimensional', 'Interactiva', 'Sistema Digital', 'Recorrible', 'Video', 'Escénica', 'Otra'], disabled: true %>
 
       <% if @art_piece.attachment_file_id? %>
         <br>
         <div class="form-group">
           <%= attachment_image_tag(@art_piece, :attachment_file, :fill, 250, 250, class: "img-responsive") %>
-          <%= f.check_box :remove_attachment_file, disabled: current_user.status %>
+          <%= f.check_box :remove_attachment_file, disabled: true %>
           <%= f.label "Eliminar Archivo" %>
         </div>
       <% end %>
 
       <div class="form-group">
         <%= f.label "Fotografía de la obra (jpeg, png)" %>
-        <%= f.attachment_field :attachment_file, hint: 'Puedes subir una foto de esta obra', disabled: current_user.status %>
+        <%= f.attachment_field :attachment_file, hint: 'Puedes subir una foto de esta obra', disabled: true %>
       </div>
 
-      <%= f.input :quantity, label: 'Cantidad de piezas de la obra', collection: 1..10, disabled: current_user.status %>
-      <%= f.input :observations, label: 'Observaciones importantes', hint: 'De exhibición, montaje, conservación, ...', :input_html => { :rows => 7, :style => 'width: 100%'}, disabled: current_user.status %>
-      <%= f.input :exhibit_text, label: 'Texto de sala', hint: 'Escrito tal como será presentado. Exclusivo para textos que se exhibirán en sala.', :input_html => { :rows => 7, :style => 'width: 100%'}, disabled: current_user.status %>
-      <%= f.input :artist_statement, label: 'Memoria Conceptual (máximo 250 palabras)', hint: 'Escrito del artista que justifíque o explíque por qué su pieza propone una lectura sobre la relación cuerpo-arte.', :input_html => { :rows => 10, :style => 'width: 100%'}, disabled: current_user.status %>
+      <%= f.input :quantity, label: 'Cantidad de piezas de la obra', collection: 1..10, disabled: true %>
+      <%= f.input :observations, label: 'Observaciones importantes', hint: 'De exhibición, montaje, conservación, ...', :input_html => { :rows => 7, :style => 'width: 100%'}, disabled: true %>
+      <%= f.input :exhibit_text, label: 'Texto de sala', hint: 'Escrito tal como será presentado. Exclusivo para textos que se exhibirán en sala.', :input_html => { :rows => 7, :style => 'width: 100%'}, disabled: true %>
+      <%= f.input :artist_statement, label: 'Memoria Conceptual (máximo 250 palabras)', hint: 'Escrito del artista que justifíque o explíque por qué su pieza propone una lectura sobre la relación cuerpo-arte.', :input_html => { :rows => 10, :style => 'width: 100%'}, disabled: true %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Guardar Obra",class: 'btn btn-primary', disabled: current_user.status %>
+      <%= f.button :submit, "Guardar Obra",class: 'btn btn-primary', disabled: true %>
     </div>
   <% end %>
 </div>
